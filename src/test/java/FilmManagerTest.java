@@ -33,7 +33,7 @@ public class FilmManagerTest {
         manager.add("film10");
         manager.add("film11");
 
-        String[] expected = {"film11", "film10", "film9", "film8", "film7", "film6", "film5", "film4", "film3", "film2" };
+        String[] expected = {"film11", "film10", "film9", "film8", "film7", "film6", "film5", "film4", "film3", "film2"};
         String[] actual = manager.findLast10();
 
         Assertions.assertArrayEquals(expected, actual);

@@ -4,15 +4,15 @@ public class FilmManager {
     public void add(String film) {
         String[] tmp = new String[films.length + 1];
 
-    for (int i = 0; i < films.length; i++) {
-        tmp[i] = films[i];
-    }
-    tmp[tmp.length - 1] = film;
-    films = tmp;
+        for (int i = 0; i < films.length; i++) {
+            tmp[i] = films[i];
+        }
+        tmp[tmp.length - 1] = film;
+        films = tmp;
     }
 
     public String[] findAll() {
-    return films;
+        return films;
     }
 
     public String[] findLast10() {
