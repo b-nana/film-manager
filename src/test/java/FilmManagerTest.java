@@ -34,7 +34,7 @@ public class FilmManagerTest {
         manager.add("film11");
 
         String[] expected = {"film11", "film10", "film9", "film8", "film7", "film6", "film5", "film4", "film3", "film2"};
-        String[] actual = manager.findLast10();
+        String[] actual = manager.findLast();
 
         Assertions.assertArrayEquals(expected, actual);
 
@@ -44,8 +44,7 @@ public class FilmManagerTest {
     @Test
 
     public void shouldFindLastNInReverse() {
-        FilmManager manager = new FilmManager();
-        int count = 5;
+        FilmManager manager = new FilmManager(5);
         manager.add("film1");
         manager.add("film2");
         manager.add("film3");
@@ -59,7 +58,7 @@ public class FilmManagerTest {
         manager.add("film11");
 
         String[] expected = {"film11", "film10", "film9", "film8", "film7"};
-        String[] actual = manager.findLastN(count);
+        String[] actual = manager.findLast();
 
         Assertions.assertArrayEquals(expected, actual);
 
@@ -82,7 +81,7 @@ public class FilmManagerTest {
         manager.add("film9");
 
         String[] expected = {"film9", "film8", "film7", "film6", "film5", "film4", "film3", "film2", "film1"};
-        String[] actual = manager.findLast10();
+        String[] actual = manager.findLast();
 
         Assertions.assertArrayEquals(expected, actual);
 
@@ -92,15 +91,14 @@ public class FilmManagerTest {
 
     public void findLastNIfLessThanN() {
 
-        FilmManager manager = new FilmManager();
-        int count = 5;
+        FilmManager manager = new FilmManager(5);
         manager.add("film1");
         manager.add("film2");
         manager.add("film3");
         manager.add("film4");
 
         String[] expected = {"film4", "film3", "film2", "film1"};
-        String[] actual = manager.findLastN(count);
+        String[] actual = manager.findLast();
 
         Assertions.assertArrayEquals(expected, actual);
 

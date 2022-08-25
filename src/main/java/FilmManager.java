@@ -1,5 +1,17 @@
 public class FilmManager {
+
     private String[] films = new String[0];
+    private int filmLimit;
+
+    public FilmManager() {
+        filmLimit = 10;
+    }
+
+    public FilmManager(int filmLimit) {
+
+        this.filmLimit = filmLimit;
+
+    }
 
     public void add(String film) {
         String[] tmp = new String[films.length + 1];
@@ -12,14 +24,15 @@ public class FilmManager {
     }
 
     public String[] findAll() {
+
         return films;
     }
 
-    public String[] findLast10() {
+    public String[] findLast() {
         String[] all = findAll();
         int count;
-        if (all.length >= 10) {
-            count = 10;
+        if (all.length >= filmLimit) {
+            count = filmLimit;
         } else {
             count = all.length;
         }
@@ -30,20 +43,6 @@ public class FilmManager {
         return reversed;
     }
 
-    public String[] findLastN(int count) {
-        String[] all = findAll();
-        int newLength;
-        if (count <= all.length) {
-            newLength = count;
-        } else {
-            newLength = all.length;
-        }
-        String[] reversed = new String[newLength];
-        for (int i = 0; i < newLength; i++) {
-            reversed[i] = all[all.length - 1 - i];
-        }
-        return reversed;
-    }
 }
 
 
